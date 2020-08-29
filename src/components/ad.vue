@@ -1,17 +1,24 @@
 <template>
   <div>
     <div class="justify-center items-center grid lg:grid-cols-5 grid-cols-2 md:grid-cols-3">
-      <div class="w-1/3 bg-green-500 border border-green-500 h-full">asdf</div>
 
-      <div class="adcomp  flex flex-col  justify-center">
+
+      <div
+            v-for="ads in 12"
+      :key="ads"
+      
+       class="adcomp  flex flex-col  justify-center">
       <div class="favit flex">  
           
 
       </div>
-        <img
-          class="adimage mx-auto"
+      <div class="adimage ">
+        <img class="mx-auto"
           src="https://hecdnw.hemlak.com/8/1/9/5/8/7/5/3/23fabfe9-e5d0-427f-8dc3-a20b185b1338.jpg"
         />
+        <div class="flex justify-between btns110">
+<button class="leftbtn">left</button><button class="rightbtn ">right</button></div>
+        </div>
         <div class="ayir flex mx-auto flex-col">
           <div class="flex addetails text-gray-700">
             <h2 class="addetailsit">3+1</h2>
@@ -20,7 +27,7 @@
           </div>
 
           <div class="flex adtitle mx-auto">
-            <h1 class="mx-auto pl-2">Devremülk ev, öğrenciden öğrenciye</h1>
+            <h1 class="mx-auto adtitle1 pl-2">Devremülk ev, öğrenciden öğrenciye</h1>
           </div>
 
           <div class="flex addetails2">
@@ -58,7 +65,6 @@ width:100%;
 
 border-radius: $radius;
 
-  overflow: hidden;
   justify-content: center;
 }
 
@@ -75,8 +81,9 @@ border-radius: $radius;
 
 .adcomp:hover  {
     .adimage{
+        img{
   box-shadow: 1px 1px 5px 3px rgba(1, 1, 1, 0.2);
-
+        }
 }
 
 .ayir {
@@ -95,13 +102,24 @@ border-radius: $radius;
 }
 
 .adimage {
-  object-fit: cover;
-  max-height: 200px;
+       max-height: 200px;
   min-height: 200px;
- max-width: 95%;
-  min-width: 95%;
-  border-radius: $radius;
-  box-shadow: 1px 1px 3px 1px rgba(1, 1, 1, 0.2);
+    img {
+  object-fit: cover;
+
+     border-radius: $radius;
+       max-height: 200px;
+  min-height: 200px;
+ max-width: 94.6%;
+  min-width: 94.6%;
+  box-shadow: 1px 1px 3px 1px rgba(1, 1, 1, 0.2); }
+}
+
+.adimage:hover {
+    z-index:3;
+    .leftbtn , .rightbtn {
+        display:flex;
+    }
 }
 
 .adtitle {
@@ -110,16 +128,23 @@ border-radius: $radius;
   overflow: hidden;
 }
 
+.adtitle1:hover {
+
+opacity:70%;
+}
+
 .addetails {
   * {
     text-transform: capitalize;
     font-size: 12px;
     margin: 5px;
     margin-left:10px;
-    padding: 2px 5px 2px 5px;
+    padding: 2px 8px 2px 8px;
     background-color:rgba(0, 128, 0, 0.363);
     border-radius: 5px;
     color: green;
+    justify-content: center;
+    text-align: center;
   }
 }
 .addetails2{
@@ -137,7 +162,9 @@ border-radius: $radius;
   }
 }
 .addetailsit2:hover {
-    text-decoration: underline;
+opacity:75%;
+
+
 }
 
 .addetailsit:hover {
@@ -161,7 +188,7 @@ h1 {
 
 .favit {
 
-margin-bottom:-40px;
+margin-bottom:-36px;
 z-index:2;
 margin-left:4%;
 color:black;
@@ -171,5 +198,50 @@ width:30px !important;
 height:30px !important;
 justify-content: center;
 align-items:center;
+}
+
+.leftbtn {
+    position:relative;
+    bottom:120px;
+    display:none;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    background-color:#A2CE99;
+    
+    color:green;
+    border-radius:50%;
+align-items: center;
+justify-content: center;    
+opacity:50%;
+}
+
+.rightbtn {
+    position:relative;
+    bottom:120px;
+       display:none;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    background-color:#A2CE99;
+    
+    color:green;
+    border-radius:50%;
+align-items: center;
+justify-content: center;    
+opacity:50%;
+}
+
+.rightbtn:hover {
+        opacity:100%;
+
+}
+
+
+.leftbtn:hover {
+        opacity:100%;
+
 }
 </style>
